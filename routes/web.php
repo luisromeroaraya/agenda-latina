@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('events.index');
+Route::get('/eventos', function () {
+    return view('eventos.index');
 });
 
 
