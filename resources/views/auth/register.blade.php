@@ -9,7 +9,7 @@
                 <div class="mb-4">
                     <label for="name" class="sr-only">Nombre</label>
                     <input type="text" name="name" id="name" placeholder="Nombre..." 
-                    class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-red-500 @enderror" value="">
+                    class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-red-500 @enderror" value="{{ old('name') }}">
 
                     @error('name')
                     <div class="text-red-500 mt-2 text-sm">
@@ -20,7 +20,7 @@
                 <div class="mb-4">
                     <label for="username" class="sr-only">Nombre de Usuario</label>
                     <input type="text" name="username" id="username" placeholder="Nombre de Usuario..." 
-                    class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('username') border-red-500 @enderror" value="">
+                    class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('username') border-red-500 @enderror" value="{{ old('username') }}">
 
                     @error('username')
                     <div class="text-red-500 mt-2 text-sm">
@@ -31,7 +31,7 @@
                 <div class="mb-4">
                     <label for="email" class="sr-only">Email</label>
                     <input type="email" name="email" id="email" placeholder="Email..." 
-                    class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-red-500 @enderror" value="">
+                    class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-red-500 @enderror" value="{{ old('email') }}">
 
                     @error('email')
                     <div class="text-red-500 mt-2 text-sm">
