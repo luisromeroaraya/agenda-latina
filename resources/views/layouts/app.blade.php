@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laravel</title>
+        <!-- SITE WEB MANIFEST -->
+        <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+        <!-- CSS -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -21,29 +24,23 @@
     <header class="text-gray-600 body-font">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
-            <span class="ml-3 text-xl">Tailblocks</span>
+                <img src="/assets/agenda-latina-logo-sm.png"/>
             </a>
             <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <a href="/" class="mr-5 hover:text-gray-900">Inicio</a>
-            <a href="{{ route('dashboard') }}" class="mr-5 hover:text-gray-900">Dashboard</a>
-            <a href="/" class="mr-5 hover:text-gray-900">Eventos</a>            
+                <a href="/" class="mr-5 hover:text-gray-900">Inicio</a>
+                <a href="{{ route('dashboard') }}" class="mr-5 hover:text-gray-900">Dashboard</a>
+                <a href="/" class="mr-5 hover:text-gray-900">Eventos</a>            
             </nav>
-
+            <!-- IF LOGGED IN -->
             @auth
                 <a href="/" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 mx-1 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Usuario</a>
                 <a href="/" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 mx-1 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Salir</a>
             @endauth
-
+            <!-- IF NOT LOGGED IN -->
             @guest
                 <a href="{{ route('login') }}" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 mx-1 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Entrar</a>
                 <a href="{{ route('register') }}" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 mx-1 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Registrarse</a>
             @endguest
-            
-            
-            
         </div>
     </header>
 
@@ -123,10 +120,7 @@
         <div class="bg-gray-100">
             <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
             <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
-                <span class="ml-3 text-xl">Tailblocks</span>
+                <img src="/assets/agenda-latina-logo-sm.png"/>
             </a>
             <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2020 Tailblocks —
                 <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@knyttneve</a>
