@@ -24,8 +24,6 @@ Route::post('/login',[LoginController::class, 'login']);
 Route::get('/register',[RegisterController::class, 'index'])->name('register');
 Route::post('/register',[RegisterController::class, 'store']);
 
-Route::get('/', function () {
-    return view('eventos.index');
-});
+Route::get('/', function () {return view('events.index');})->name('events');
 
 

@@ -29,7 +29,7 @@
             <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
                 <a href="/" class="mr-5 hover:text-gray-900">Inicio</a>
                 <a href="{{ route('dashboard') }}" class="mr-5 hover:text-gray-900">Dashboard</a>
-                <a href="/" class="mr-5 hover:text-gray-900">Eventos</a>            
+                <a href="{{ route('events') }}" class="mr-5 hover:text-gray-900">Eventos</a>            
             </nav>
             <!-- IF LOGGED IN -->
             @auth
