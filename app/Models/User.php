@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Event;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -43,7 +42,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function events(){
+    public function events() {
         return $this->hasMany(Event::class);
     }
 }

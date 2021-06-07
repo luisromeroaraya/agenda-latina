@@ -2,40 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function __construct(){
+    public function __construct() {
         $this->middleware(['auth']);
     }
 
-    public function index(){
+    public function index() {
         //dd(auth()->user()->events);
         return view ('dashboard');
     }
 
-    public function store(Request $request){
+    public function store(Request $request) {
         $this->validate($request, [
-            
-            'date' => 'required',
             'name' => 'required',
-            'description' => 'required',
+            'date' => 'required',
             'place' => 'required',
-            'img_src' => 'required',
-            'url' => 'required'
+            'description' => 'required',
+            'url' => 'required',
+            'img_src' => 'required'
         ]);
 
-       
-        $request()->user()->events()->create([
-            'date' =>$request->date,
-            'name' =>$request->name,
-            'description' =>$request->description,
-            'place' =>$request->place,
-            'img_src' =>$request->img_src,
-            'url' =>$request->url
-        ]);
-
+        $request->user()->events()->create($request->only('name', 'date', 'place', 'description', 'url', 'img_src'));
+        
         return back();
     }
 }
