@@ -8,7 +8,7 @@ use App\Models\Event;
 class EventsController extends Controller
 {
     public function index() {
-        $events = Event::paginate(3);
+        $events = Event::with(['user'])->paginate(3);
         return view('events.index', [
             'events' => $events
             ]);

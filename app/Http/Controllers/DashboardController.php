@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -11,8 +12,9 @@ class DashboardController extends Controller
         $this->middleware(['auth']);
     }
 
-    public function index() {        
-        return view ('dashboard');
+    public function index() {   
+        $events = Event::with(['user'])->get();     
+        return view ('dashboard', ['events'=> $events]);
     }
 
     public function store(Request $request) {
@@ -27,6 +29,11 @@ class DashboardController extends Controller
 
         $request->user()->events()->create($request->only('name', 'date', 'place', 'description', 'url', 'img_src'));
         
+        return back();
+    }
+
+    public function destroy(Event $event){
+        $event->delete();
         return back();
     }
 }
