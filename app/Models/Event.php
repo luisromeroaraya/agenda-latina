@@ -17,4 +17,8 @@ class Event extends Model
         'img_src',
         'url'
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
