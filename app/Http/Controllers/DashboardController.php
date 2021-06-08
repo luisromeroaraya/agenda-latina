@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -13,8 +13,9 @@ class DashboardController extends Controller
     }
 
     public function index() {   
-        $events = Event::with(['user'])->get();     
-        return view ('dashboard', ['events'=> $events]);
+        $user = Auth::user();
+        $events = Event::with(['user'])->where('user_id', $user->id)->get();
+        return view ('dashboard', ['user' => $user, 'events'=> $events]);
     }
 
     public function store(Request $request) {
@@ -26,13 +27,11 @@ class DashboardController extends Controller
             'url' => 'required',
             'img_src' => 'required'
         ]);
-
         $request->user()->events()->create($request->only('name', 'date', 'place', 'description', 'url', 'img_src'));
-        
         return back();
     }
 
-    public function destroy(Event $event){
+    public function destroy(Event $event) {
         $event->delete();
         return back();
     }
