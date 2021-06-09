@@ -12,7 +12,7 @@
         <!-- HERO -->
         <div class="flex mx-auto my-24 md:flex-row flex-col items-center border-2 border-gray-200 border-opacity-60 rounded-lg">
             <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600">
+                <img class="object-cover object-center rounded" alt="{{ $event->name }}" src="{{ $event->img_src }}">
             </div>
             <div class="lg:flex-grow flex flex-col items-center">
                 <div class="flex items-left flex-wrap my-5 text-center">
@@ -46,7 +46,7 @@
 
         <div class="flex mx-auto my-24 md:flex-row flex-col items-center border-2 border-gray-200 border-opacity-60 rounded-lg">
             <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                <p>{{ $event->description }}</p>
+                <p>{!! $event->description !!}</p>
             </div>
             <div class="lg:flex-grow flex flex-col items-center mx-10 p-8">
                 <div class="flex flex-wrap items-left w-full">

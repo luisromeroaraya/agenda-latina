@@ -14,13 +14,14 @@ class DashboardController extends Controller
 
     public function index() {   
         $user = Auth::user();
-        $events = Event::orderBy('date_start', 'asc')->with(['user'])->where('user_id', $user->id)->get();
+        $events = Event::orderBy('date_start', 'asc')->with(['user', 'category'])->where('user_id', $user->id)->get();
         return view ('dashboard', ['user' => $user, 'events'=> $events]);
     }
 
     public function store(Request $request) {
         $this->validate($request, [
             'name' => 'required',
+            'category_id' => 'required',
             'date_start' => 'required',
             'date_end' => 'required',
             'place' => 'required',
@@ -31,7 +32,7 @@ class DashboardController extends Controller
             'url' => 'required',
             'img_src' => 'required'
         ]);
-        $request->user()->events()->create($request->only('name', 'date_start', 'date_end', 'place', 'address', 'description', 'telephone', 'email', 'url', 'img_src'));
+        $request->user()->events()->create($request->only('name', 'category_id', 'date_start', 'date_end', 'place', 'address', 'description', 'telephone', 'email', 'url', 'img_src'));
         return back();
     }
 

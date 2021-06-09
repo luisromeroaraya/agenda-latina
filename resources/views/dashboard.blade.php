@@ -16,8 +16,21 @@
                 @enderror
             </div>
             <div class="mb-4">
+                <label for="category_id" class="sr-only">Categoría</label>
+                <select name="category_id" id="category_id" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('category_id') border-red-500 @enderror" value="{{ old('category_id') }}">
+                    <option value="1" selected>Concierto</option>
+                    <option value="2">Fiesta</option>
+                    <option value="3">Exhibición</option>
+                </select>
+                @error('category_id')
+                <div class="text-red-500 mt-2 text-sm">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+            <div class="mb-4">
                 <label for="date_start" class="sr-only">Fecha de Inicio</label>
-                <input type="datetime-local" name="date_start" id="date_start" placeholder="Fecha" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('date_start') border-red-500 @enderror" value="{{ old('date_start') }}">
+                <input type="datetime-local" name="date_start" id="date_start" placeholder="Fecha de Inicio" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('date_start') border-red-500 @enderror" value="{{ old('date_start') }}">
                 @error('date_start')
                 <div class="text-red-500 mt-2 text-sm">
                     {{ $message }}
@@ -26,7 +39,7 @@
             </div>
             <div class="mb-4">
                 <label for="date_end" class="sr-only">Fecha de Término</label>
-                <input type="datetime-local" name="date_end" id="date_end" placeholder="Fecha" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('date_end') border-red-500 @enderror" value="{{ old('date_end') }}">
+                <input type="datetime-local" name="date_end" id="date_end" placeholder="Fecha de Término" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('date_end') border-red-500 @enderror" value="{{ old('date_end') }}">
                 @error('date_end')
                 <div class="text-red-500 mt-2 text-sm">
                     {{ $message }}
@@ -44,7 +57,7 @@
             </div>
             <div class="mb-4">
                 <label for="address" class="sr-only">Dirección</label>
-                <input type="text" name="address" id="address" addressholder="Lugar" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('address') border-red-500 @enderror" value="{{ old('address') }}">
+                <input type="text" name="address" id="address" addressholder="Dirección" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('address') border-red-500 @enderror" value="{{ old('address') }}">
                 @error('address')
                 <div class="text-red-500 mt-2 text-sm">
                     {{ $message }}
@@ -62,7 +75,7 @@
             </div>
             <div class="mb-4">
                 <label for="telephone" class="sr-only">Teléfono de Contacto</label>
-                <input type="tel" name="telephone" id="telephone" placeholder="Link del Evento" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('telephone') border-red-500 @enderror" value="{{ old('telephone') }}"></input>
+                <input type="tel" name="telephone" id="telephone" placeholder="Teléfono de Contacto" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('telephone') border-red-500 @enderror" value="{{ old('telephone') }}"></input>
                 @error('telephone')
                 <div class="text-red-500 mt-2 text-sm">
                     {{ $message }}
@@ -70,7 +83,7 @@
                 @enderror
             </div><div class="mb-4">
                 <label for="email" class="sr-only">Email de Contacto</label>
-                <input type="email" name="email" id="email" placeholder="Link del Evento" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-red-500 @enderror" value="{{ old('email') }}"></input>
+                <input type="email" name="email" id="email" placeholder="Email de Contacto" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-red-500 @enderror" value="{{ old('email') }}"></input>
                 @error('email')
                 <div class="text-red-500 mt-2 text-sm">
                     {{ $message }}
@@ -88,7 +101,7 @@
             </div>
             <div class="mb-4">
                 <label for="img_src" class="sr-only">Link de Imagen del Evento</label>
-                <input type="text" name="img_src" id="img_src" placeholder="Link de la Imagen" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('img_src') border-red-500 @enderror" value="{{ old('img_src') }}"></input>
+                <input type="text" name="img_src" id="img_src" placeholder="Link de la Imagen del Evento" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('img_src') border-red-500 @enderror" value="{{ old('img_src') }}"></input>
                 @error('img_src')
                 <div class="text-red-500 mt-2 text-sm">
                     {{ $message }}
