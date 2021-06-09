@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserEventController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -33,6 +34,7 @@ Route::get('/register',[RegisterController::class, 'index'])->name('register');
 Route::post('/register',[RegisterController::class, 'store']);
 
 Route::get('/events',[EventsController::class, 'index'])->name('events');
+Route::get('/events/{event}',[EventsController::class, 'show'])->name('events.show');
 
-
+Route::get('/users/{user:username}/events', [UserEventController::class, 'index'])->name('users.events');
 

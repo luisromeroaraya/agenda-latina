@@ -14,7 +14,7 @@ class DashboardController extends Controller
 
     public function index() {   
         $user = Auth::user();
-        $events = Event::with(['user'])->where('user_id', $user->id)->get();
+        $events = Event::orderBy('date', 'asc')->with(['user'])->where('user_id', $user->id)->get();
         return view ('dashboard', ['user' => $user, 'events'=> $events]);
     }
 
@@ -32,6 +32,7 @@ class DashboardController extends Controller
     }
 
     public function destroy(Event $event) {
+        $this->authorize('delete', $event);
         $event->delete();
         return back();
     }
