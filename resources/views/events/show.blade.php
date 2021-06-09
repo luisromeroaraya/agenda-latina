@@ -48,7 +48,7 @@
             <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 px-10">
                 <p>{!! $event->description !!}</p>
             </div>
-            <div class="lg:flex-grow flex flex-col items-center mb-10 md:mb-0 px-10">
+            <div class="lg:max-w-lg lg:w-full w-5/6 lg:flex-grow flex flex-col items-center mb-10 md:mb-0 px-10">
                 <div class="flex flex-wrap items-left w-full">
                     <p>Horario: {{ \Carbon\Carbon::parse($event->date_start)->locale('es_ES')->isoFormat('dddd D MMMM YYYY') }} de {{ \Carbon\Carbon::parse($event->date_start)->toTimeString() }} hasta {{ \Carbon\Carbon::parse($event->date_end)->locale('es_ES')->isoFormat('dddd D MMMM YYYY') }} a las {{ \Carbon\Carbon::parse($event->date_end)->toTimeString() }}</p>                    
                 </div>
