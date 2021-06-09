@@ -4,7 +4,7 @@
     <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
     <a href="{{ route('events.show', $event) }}"><img class="lg:h-48 md:h-36 w-full object-cover object-center" src={{ $event->img_src }} alt={{ $event->name }}></a>
         <div class="p-6">
-            <h2 class="tracking-widest text-xs title-font font-medium mb-1">{{ $event->date }}</h2>
+            <h2 class="tracking-widest text-xs title-font font-medium mb-1">{{ $event->date_start }}</h2>
             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $event->name }}</h1>
             <p class="leading-relaxed mb-3">{!! $event->description !!}</p>
             <div class="flex items-center flex-wrap ">

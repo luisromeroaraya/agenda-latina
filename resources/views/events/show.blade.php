@@ -4,7 +4,7 @@
 <section class="bg-white text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
         <div class="p-6">
-            <h2 class="tracking-widest text-xl title-font font-medium text-gray-400 mb-1">{{ $event->date }}</h2>
+            <h2 class="tracking-widest text-xl title-font font-medium text-gray-400 mb-1">{{ $event->date_start }}</h2>
             <h1 class="text-2xl font-medium mb-1">{{ $event->name }} </h1>
             <h3><a href="{{ route('users.events', $event->user) }}">{{ $event->user->name }}</a></h3>
         </div>
@@ -50,13 +50,16 @@
             </div>
             <div class="lg:flex-grow flex flex-col items-center mx-10 p-8">
                 <div class="flex flex-wrap items-left w-full">
-                    <p>Fecha: {{ \Carbon\Carbon::parse($event->date)->toDateString() }}</p>                    
+                    <p>Fecha: {{ \Carbon\Carbon::parse($event->date_start)->toDateString() }}</p>                    
                 </div>
                 <div class="flex flex-wrap items-left w-full">
-                    <p>Hora: {{ \Carbon\Carbon::parse($event->date)->toTimeString() }}</p>                    
+                    <p>Hora: {{ \Carbon\Carbon::parse($event->date_start)->toTimeString() }}</p>                    
                 </div>
                 <div class="flex flex-wrap items-left w-full">
                     <p>Lugar: {{ $event->place }}</p>
+                </div>
+                <div class="flex flex-wrap items-left w-full">
+                    <p>Dirección: {{ $event->address }}</p>
                 </div>
             </div>
         </div>

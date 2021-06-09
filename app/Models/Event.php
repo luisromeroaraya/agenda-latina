@@ -10,15 +10,23 @@ class Event extends Model
     use HasFactory;
 
     protected $fillable = [
-        'date',
+        'date_start',
+        'date_end',
         'name',
+        'img_src',
         'description',
         'place',
-        'img_src',
+        'address',
+        'telephone',
+        'email',
         'url'
     ];
 
     public function user() {
         return $this->belongsTo(User::class);
+    }
+
+    public function category() {
+        return $this->belongsTo(Category::class);
     }
 }

@@ -16,9 +16,18 @@
                 @enderror
             </div>
             <div class="mb-4">
-                <label for="date" class="sr-only">Fecha</label>
-                <input type="datetime-local" name="date" id="date" placeholder="Fecha" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('date') border-red-500 @enderror" value="{{ old('date') }}">
-                @error('date')
+                <label for="date_start" class="sr-only">Fecha de Inicio</label>
+                <input type="datetime-local" name="date_start" id="date_start" placeholder="Fecha" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('date_start') border-red-500 @enderror" value="{{ old('date_start') }}">
+                @error('date_start')
+                <div class="text-red-500 mt-2 text-sm">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+            <div class="mb-4">
+                <label for="date_end" class="sr-only">Fecha de Término</label>
+                <input type="datetime-local" name="date_end" id="date_end" placeholder="Fecha" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('date_end') border-red-500 @enderror" value="{{ old('date_end') }}">
+                @error('date_end')
                 <div class="text-red-500 mt-2 text-sm">
                     {{ $message }}
                 </div>
@@ -34,9 +43,35 @@
                 @enderror
             </div>
             <div class="mb-4">
+                <label for="address" class="sr-only">Dirección</label>
+                <input type="text" name="address" id="address" addressholder="Lugar" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('address') border-red-500 @enderror" value="{{ old('address') }}">
+                @error('address')
+                <div class="text-red-500 mt-2 text-sm">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+            <div class="mb-4">
                 <label for="description" class="sr-only">Descripción del Evento</label>
                 <textarea name="description" id="description" placeholder="Descripción del Evento" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('description') border-red-500 @enderror">{{ old('description') }}</textarea>
                 @error('description')
+                <div class="text-red-500 mt-2 text-sm">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+            <div class="mb-4">
+                <label for="telephone" class="sr-only">Teléfono de Contacto</label>
+                <input type="tel" name="telephone" id="telephone" placeholder="Link del Evento" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('telephone') border-red-500 @enderror" value="{{ old('telephone') }}"></input>
+                @error('telephone')
+                <div class="text-red-500 mt-2 text-sm">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div><div class="mb-4">
+                <label for="email" class="sr-only">Email de Contacto</label>
+                <input type="email" name="email" id="email" placeholder="Link del Evento" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-red-500 @enderror" value="{{ old('email') }}"></input>
+                @error('email')
                 <div class="text-red-500 mt-2 text-sm">
                     {{ $message }}
                 </div>
@@ -52,7 +87,7 @@
                 @enderror
             </div>
             <div class="mb-4">
-                <label for="img_src" class="sr-only">Imagen</label>
+                <label for="img_src" class="sr-only">Link de Imagen del Evento</label>
                 <input type="text" name="img_src" id="img_src" placeholder="Link de la Imagen" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('img_src') border-red-500 @enderror" value="{{ old('img_src') }}"></input>
                 @error('img_src')
                 <div class="text-red-500 mt-2 text-sm">
