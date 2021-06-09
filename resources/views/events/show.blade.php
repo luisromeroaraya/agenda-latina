@@ -4,9 +4,9 @@
 <section class="bg-white text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
         <div class="p-6">
-            <h2 class="tracking-widest text-xl title-font font-medium text-gray-400 mb-1">{{ $event->date_start }}</h2>
+            <h2 class="tracking-widest text-xl title-font font-medium text-gray-400 mb-1">{{ \Carbon\Carbon::parse($event->date_start)->locale('es_ES')->isoFormat('dddd, D \\d\\e MMMM \\d\\e YYYY') }}</h2>
             <h1 class="text-2xl font-medium mb-1">{{ $event->name }} </h1>
-            <h3><a href="{{ route('users.events', $event->user) }}">{{ $event->user->name }}</a></h3>
+            <h3><a href="{{ route('categories.events', $event->category) }}">{{ $event->category->name }}</a> | <a href="{{ route('users.events', $event->user) }}">{{ $event->place }}</a></h3>
         </div>
 
         <!-- HERO -->

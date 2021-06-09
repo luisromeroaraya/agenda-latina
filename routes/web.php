@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserEventController;
+use App\Http\Controllers\CategoryEventController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -37,4 +38,6 @@ Route::get('/events',[EventsController::class, 'index'])->name('events');
 Route::get('/events/{event}',[EventsController::class, 'show'])->name('events.show');
 
 Route::get('/users/{user:username}/events', [UserEventController::class, 'index'])->name('users.events');
+
+Route::get('/categories/{category:name}/events', [CategoryEventController::class, 'index'])->name('categories.events');
 
