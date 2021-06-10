@@ -41,7 +41,9 @@
     <div class="flex flex-wrap -m-4">
       @if ($events->count())
         @foreach ($events as $event)
+        <div class="p-4 md:w-1/3">
           <x-event :event="$event" />
+        </div>
         @endforeach      
       </div>
       {{ $events->links() }}

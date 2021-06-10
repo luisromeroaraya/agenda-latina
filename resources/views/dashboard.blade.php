@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="flex justify-center">
-    <div class="w-4/12 bg-white p-6">
+    <div class="md:w-1/2 w-5/6 bg-white p-6">
         <h1>Dashboard</h1>
         <form action="{{ route('dashboard') }}" method="post">
             @csrf
@@ -18,7 +18,8 @@
             <div class="mb-4">
                 <label for="category_id" class="sr-only">Categoría</label>
                 <select name="category_id" id="category_id" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('category_id') border-red-500 @enderror" value="{{ old('category_id') }}">
-                    <option value="1" selected>Concierto</option>
+                    <option>Elegir Categoría:</option>
+                    <option value="1">Concierto</option>
                     <option value="2">Fiesta</option>
                     <option value="3">Exhibición</option>
                 </select>
@@ -28,8 +29,9 @@
                 </div>
                 @enderror
             </div>
-            <div class="mb-4">
+            <div class="flex mb-4">
                 <label for="date_start" class="sr-only">Fecha de Inicio</label>
+                <div class="bg-gray-100 border-2 p-4 rounded-lg @error('date_start') border-red-500 @enderror">Inicio:</div>
                 <input type="datetime-local" name="date_start" id="date_start" placeholder="Fecha de Inicio" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('date_start') border-red-500 @enderror" value="{{ old('date_start') }}">
                 @error('date_start')
                 <div class="text-red-500 mt-2 text-sm">
@@ -37,8 +39,9 @@
                 </div>
                 @enderror
             </div>
-            <div class="mb-4">
+            <div class="flex mb-4">
                 <label for="date_end" class="sr-only">Fecha de Término</label>
+                <div class="bg-gray-100 border-2 p-4 rounded-lg @error('date_end') border-red-500 @enderror">Fin:</div>
                 <input type="datetime-local" name="date_end" id="date_end" placeholder="Fecha de Término" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('date_end') border-red-500 @enderror" value="{{ old('date_end') }}">
                 @error('date_end')
                 <div class="text-red-500 mt-2 text-sm">
@@ -57,7 +60,7 @@
             </div>
             <div class="mb-4">
                 <label for="address" class="sr-only">Dirección</label>
-                <input type="text" name="address" id="address" addressholder="Dirección" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('address') border-red-500 @enderror" value="{{ old('address') }}">
+                <input type="text" name="address" id="address" placeholder="Dirección" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('address') border-red-500 @enderror" value="{{ old('address') }}">
                 @error('address')
                 <div class="text-red-500 mt-2 text-sm">
                     {{ $message }}

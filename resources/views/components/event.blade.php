@@ -1,10 +1,10 @@
 @props(['event' => $event])
 
-<div class="p-4 md:w-1/3">
+
     <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
         <a href="{{ route('events.show', $event) }}"><img class="lg:h-48 md:h-36 w-full object-cover object-center" src={{ $event->img_src }} alt={{ $event->name }}></a>
         <div class="p-6">
-            <h2 class="tracking-widest text-xs title-font font-medium mb-1">{{ $event->date_start }}</h2>
+            <h2 class="tracking-widest text-xs title-font font-medium mb-1">{{ \Carbon\Carbon::parse($event->date_start)->locale('es_ES')->isoFormat('dddd, D \\d\\e MMMM \\d\\e YYYY') }}</h2>
             <h1 class="title-font text-lg font-medium text-gray-900 mb-3">{{ $event->name }}</h1>
             <div class="flex items-center flex-wrap ">
                 <a class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0"><a href="{{ route('events.show', $event) }}">Leer más</a>
@@ -24,4 +24,3 @@
             </div>
         </div>
     </div>
-</div>
