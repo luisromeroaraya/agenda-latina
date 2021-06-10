@@ -16,8 +16,7 @@
             </div>
             <div class="lg:flex-grow flex flex-col items-center">
                 <div class="flex items-left flex-wrap my-5 text-center">
-                    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text={{ $event->name }}&dates={{ $event->date }}/{{$event->date }}&details=Detalles+del+evento:+http://www.agendalatina.be/events/{{ $event->id }}&location={{ $event->place }}&sf=true&output=xml" 
-                        class="text-gray-500 inline-flex items-center md:mb-2 lg:mb-0">
+                    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text={{ $event->name }}&dates={{ $event->date }}/{{$event->date }}&details=Detalles+del+evento:+http://www.agendalatina.be/events/{{ $event->id }}&location={{ $event->place }}&sf=true&output=xml" class="text-gray-500 inline-flex items-center md:mb-2 lg:mb-0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
@@ -50,7 +49,7 @@
             </div>
             <div class="lg:w-full w-5/6 lg:flex-grow flex flex-col items-center mb-10 md:mb-0 px-10">
                 <div class="flex flex-wrap items-left w-full">
-                    <p>Horario: {{ \Carbon\Carbon::parse($event->date_start)->locale('es_ES')->isoFormat('dddd D MMMM YYYY') }} de {{ \Carbon\Carbon::parse($event->date_start)->toTimeString() }} hasta {{ \Carbon\Carbon::parse($event->date_end)->locale('es_ES')->isoFormat('dddd D MMMM YYYY') }} a las {{ \Carbon\Carbon::parse($event->date_end)->toTimeString() }}</p>                    
+                    <p>Horario: {{ \Carbon\Carbon::parse($event->date_start)->locale('es_ES')->isoFormat('dddd D MMMM YYYY') }} de {{ \Carbon\Carbon::parse($event->date_start)->toTimeString() }} hasta {{ \Carbon\Carbon::parse($event->date_end)->locale('es_ES')->isoFormat('dddd D MMMM YYYY') }} a las {{ \Carbon\Carbon::parse($event->date_end)->toTimeString() }}</p>
                 </div>
                 <div class="flex flex-wrap items-left w-full">
                     <p>Lugar: {{ $event->place }}</p>

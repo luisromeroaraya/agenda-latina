@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $concerts = Event::orderBy('date_start', 'asc')->with(['user', 'category'])->where('category_id', '1')->get();
         $parties = Event::orderBy('date_start', 'asc')->with(['user', 'category'])->where('category_id', '2')->get();
         $exhibitions = Event::orderBy('date_start', 'asc')->with(['user', 'category'])->where('category_id', '3')->get();
@@ -15,6 +16,6 @@ class HomeController extends Controller
             'concerts' => $concerts,
             'parties' => $parties,
             'exhibitions' => $exhibitions
-            ]);
+        ]);
     }
 }

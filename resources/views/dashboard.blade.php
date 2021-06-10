@@ -84,7 +84,8 @@
                     {{ $message }}
                 </div>
                 @enderror
-            </div><div class="mb-4">
+            </div>
+            <div class="mb-4">
                 <label for="email" class="sr-only">Email de Contacto</label>
                 <input type="email" name="email" id="email" placeholder="Email de Contacto" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-red-500 @enderror" value="{{ old('email') }}"></input>
                 @error('email')
@@ -145,11 +146,11 @@
                     </span>
 
                     @can('delete', $event)
-                        <form class="text-gray-400 inline-flex items-center leading-none text-sm" action="{{ route('dashboard.destroy', $event) }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="text-blue-500">Eliminar Evento</button>
-                        </form> 
+                    <form class="text-gray-400 inline-flex items-center leading-none text-sm" action="{{ route('dashboard.destroy', $event) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-blue-500">Eliminar Evento</button>
+                    </form>
                     @endcan
                 </div>
             </div>

@@ -8,17 +8,20 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware(['auth']);
     }
 
-    public function index() {   
+    public function index()
+    {
         $user = Auth::user();
         $events = Event::orderBy('date_start', 'asc')->with(['user', 'category'])->where('user_id', $user->id)->get();
-        return view ('dashboard', ['user' => $user, 'events'=> $events]);
+        return view('dashboard', ['user' => $user, 'events' => $events]);
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $this->validate($request, [
             'name' => 'required',
             'category_id' => 'required',
@@ -36,7 +39,8 @@ class DashboardController extends Controller
         return back();
     }
 
-    public function destroy(Event $event) {
+    public function destroy(Event $event)
+    {
         $this->authorize('delete', $event);
         $event->delete();
         return back();

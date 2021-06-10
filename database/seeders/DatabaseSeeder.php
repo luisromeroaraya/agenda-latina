@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         $user1 = User::factory()->create();
         $user2 = User::factory()->create();
         $user3 = User::factory()->create();
-        
+
         $category1 = Category::create(['name' => 'Concierto']);
         $category2 = Category::create(['name' => 'Fiesta']);
         $category3 = Category::create(['name' => 'Exhibición']);
@@ -28,12 +28,12 @@ class DatabaseSeeder extends Seeder
             "user_id" => $user1->id,
             "category_id" => $category1->id
         ]);
-        
+
         Event::factory(15)->create([
             "user_id" => $user2->id,
             "category_id" => $category2->id
         ]);
-            
+
         Event::factory(9)->create([
             "user_id" => $user3->id,
             "category_id" => $category3->id

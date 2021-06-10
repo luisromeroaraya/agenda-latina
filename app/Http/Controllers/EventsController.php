@@ -7,14 +7,16 @@ use App\Models\Event;
 
 class EventsController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $events = Event::orderBy('date_start', 'asc')->with(['user', 'category'])->paginate(3);
         return view('events.index', [
             'events' => $events
-            ]);
+        ]);
     }
 
-    public function show(Event $event){
+    public function show(Event $event)
+    {
         return view('events.show', [
             'event' => $event
         ]);
