@@ -30,17 +30,41 @@
         new Glide('.glide_concerts', {
             type: 'carousel',
             startAt: 0,
-            perView: 3
+            perView: 3,
+            breakpoints: {
+                1024: {
+                    perView:2
+                },
+                768: {
+                    perView:1
+                }
+            }
         }).mount();
         new Glide('.glide_parties', {
             type: 'carousel',
             startAt: 0,
-            perView: 3
+            perView: 3,
+            breakpoints: {
+                1024: {
+                    perView:2
+                },
+                768: {
+                    perView:1
+                }
+            }
         }).mount();
         new Glide('.glide_exhibitions', {
             type: 'carousel',
             startAt: 0,
-            perView: 3
+            perView: 3,
+            breakpoints: {
+                1024: {
+                    perView:2
+                },
+                768: {
+                    perView:1
+                }
+            }
         }).mount();
     </script>
 </body>
