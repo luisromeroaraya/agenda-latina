@@ -108,7 +108,6 @@
           </li>
         </ul>
       </div>
-
       <div class="glide__arrows" data-glide-el="controls">
         <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -124,7 +123,7 @@
     </div>
 
 
-    <div class="glide_concerts">
+    <div class="glide glide_concerts">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
           @if ($concerts->count())
@@ -152,7 +151,7 @@
       </div>
     </div>
 
-    <div class="glide_parties">
+    <div class="glide glide_parties">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
           @if ($parties->count())
@@ -180,7 +179,7 @@
       </div>
     </div>
 
-    <div class="glide_exhibitions">
+    <div class="glide glide_exhibitions">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
           @if ($exhibitions->count())

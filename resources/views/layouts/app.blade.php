@@ -26,22 +26,22 @@
             type: 'carousel',
             startAt: 0,
             perView: 1
-        }).mount()
+        }).mount();
         new Glide('.glide_concerts', {
             type: 'carousel',
             startAt: 0,
             perView: 3
-        }).mount()
+        }).mount();
         new Glide('.glide_parties', {
             type: 'carousel',
             startAt: 0,
             perView: 3
-        }).mount()
+        }).mount();
         new Glide('.glide_exhibitions', {
             type: 'carousel',
             startAt: 0,
             perView: 3
-        }).mount()
+        }).mount();
     </script>
 </body>
 
