@@ -37,6 +37,8 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/events', [EventsController::class, 'index'])->name('events');
 Route::get('/events/{event}', [EventsController::class, 'show'])->name('events.show');
+Route::post('/events', [EventsController::class, 'search'])->name('events.search');
+
 
 Route::get('/users/{user:username}/events', [UserEventController::class, 'index'])->name('users.events');
 

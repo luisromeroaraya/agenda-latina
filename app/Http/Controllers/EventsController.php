@@ -9,7 +9,7 @@ class EventsController extends Controller
 {
     public function index()
     {
-        $events = Event::orderBy('date_start', 'asc')->with(['user', 'category'])->paginate(3);
+        $events = Event::orderBy('date_start', 'asc')->with(['user', 'category'])->paginate(9);
         return view('events.index', [
             'events' => $events
         ]);
@@ -21,4 +21,13 @@ class EventsController extends Controller
             'event' => $event
         ]);
     }
+
+    public function search()
+    {
+        $events = Event::orderBy('date_start', 'asc')->with(['user', 'category'])->paginate(9);
+        return view('events.index', [
+            'events' => $events
+        ]);
+    }
+
 }
