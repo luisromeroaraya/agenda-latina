@@ -19,9 +19,11 @@
                 <label for="category_id" class="sr-only">Categoría</label>
                 <select name="category_id" id="category_id" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('category_id') border-red-500 @enderror" value="{{ old('category_id') }}">
                     <option>Elegir Categoría:</option>
-                    <option value="1">Concierto</option>
-                    <option value="2">Fiesta</option>
-                    <option value="3">Exhibición</option>
+                    @if ($categories->count())
+                        @foreach ($categories as $category)
+                        <x-option :option="$category"/>
+                        @endforeach
+                    @endif
                 </select>
                 @error('category_id')
                 <div class="text-red-500 mt-2 text-sm">

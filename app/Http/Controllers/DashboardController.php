@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,8 +17,9 @@ class DashboardController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $categories = Category::all();
         $events = Event::orderBy('date_start', 'asc')->with(['user', 'category'])->where('user_id', $user->id)->get();
-        return view('dashboard', ['user' => $user, 'events' => $events]);
+        return view('dashboard', ['user' => $user, 'categories'=> $categories, 'events' => $events]);
     }
 
     public function store(Request $request)

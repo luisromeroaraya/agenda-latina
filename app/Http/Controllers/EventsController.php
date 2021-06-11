@@ -24,7 +24,8 @@ class EventsController extends Controller
 
     public function search()
     {
-        $events = Event::orderBy('date_start', 'asc')->with(['user', 'category'])->where('name', 'like', '%' . request('search') . '%')->orWhere('description', 'like', '%' . request('search') . '%')->orWhere('place', 'like', '%' . request('search') . '%')->orWhere('date_start', 'like', '%' . request('search') . '%')->paginate(9);
+        $events = Event::orderBy('date_start', 'asc')
+        ->with(['user', 'category'])->filter(request(['search']))->paginate(9);
         
         return view('events.index', [
             'events' => $events
