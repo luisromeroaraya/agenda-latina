@@ -20,9 +20,9 @@
                 <select name="category_id" id="category_id" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('category_id') border-red-500 @enderror" value="{{ old('category_id') }}">
                     <option>Elegir Categoría:</option>
                     @if ($categories->count())
-                        @foreach ($categories as $category)
-                        <x-option :option="$category"/>
-                        @endforeach
+                    @foreach ($categories as $category)
+                    <x-option :option="$category" />
+                    @endforeach
                     @endif
                 </select>
                 @error('category_id')

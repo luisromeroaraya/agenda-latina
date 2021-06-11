@@ -19,7 +19,7 @@ class DashboardController extends Controller
         $user = Auth::user();
         $categories = Category::all();
         $events = Event::orderBy('date_start', 'asc')->with(['user', 'category'])->where('user_id', $user->id)->get();
-        return view('dashboard', ['user' => $user, 'categories'=> $categories, 'events' => $events]);
+        return view('dashboard', ['user' => $user, 'categories' => $categories, 'events' => $events]);
     }
 
     public function store(Request $request)
