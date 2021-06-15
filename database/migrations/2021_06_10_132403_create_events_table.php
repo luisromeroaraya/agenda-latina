@@ -19,14 +19,14 @@ class CreateEventsTable extends Migration
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->dateTime('date_start', $precision = 0);
             $table->dateTime('date_end', $precision = 0);
-            $table->text('name');
-            $table->text('img_src');
+            $table->string('name');
+            $table->string('img_src');
             $table->text('description');
-            $table->text('place');
-            $table->text('address');
-            $table->text('telephone');
-            $table->text('email');
-            $table->text('url');
+            $table->string('place');
+            $table->string('address');
+            $table->string('telephone');
+            $table->string('email');
+            $table->string('url');
             $table->timestamps();
         });
     }
