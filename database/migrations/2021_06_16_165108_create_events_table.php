@@ -27,6 +27,7 @@ class CreateEventsTable extends Migration
             $table->string('telephone');
             $table->string('email');
             $table->string('url');
+            $table->boolean('highlight');
             $table->timestamps();
         });
     }

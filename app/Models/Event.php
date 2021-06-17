@@ -20,7 +20,8 @@ class Event extends Model
         'address',
         'telephone',
         'email',
-        'url'
+        'url',
+        'highlight'
     ];
 
     public function user()

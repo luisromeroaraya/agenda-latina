@@ -32,6 +32,7 @@ class EventFactory extends Factory
             'telephone' => $this->faker->e164PhoneNumber(),
             'email' => $this->faker->companyEmail(),
             'url' => $this->faker->url(),
+            'highlight' => 0
         ];
     }
 }

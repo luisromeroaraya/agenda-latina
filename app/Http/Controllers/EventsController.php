@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Event;
+use Illuminate\Http\Request;
 
 class EventsController extends Controller
 {
@@ -31,5 +31,4 @@ class EventsController extends Controller
             'events' => $events
         ]);
     }
-
 }

@@ -22,25 +22,6 @@ class DashboardController extends Controller
         return view('dashboard', ['user' => $user, 'categories' => $categories, 'events' => $events]);
     }
 
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'name' => 'required',
-            'category_id' => 'required',
-            'date_start' => 'required',
-            'date_end' => 'required',
-            'place' => 'required',
-            'address' => 'required',
-            'description' => 'required',
-            'telephone' => 'required',
-            'email' => 'required',
-            'url' => 'required',
-            'img_src' => 'required'
-        ]);
-        $request->user()->events()->create($request->only('name', 'category_id', 'date_start', 'date_end', 'place', 'address', 'description', 'telephone', 'email', 'url', 'img_src'));
-        return back();
-    }
-
     public function destroy(Event $event)
     {
         $this->authorize('delete', $event);
