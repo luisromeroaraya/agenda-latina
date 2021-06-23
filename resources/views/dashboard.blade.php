@@ -30,7 +30,7 @@
                                         <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                                             <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                                            </svg><a href="{{ route('users.events', $event->user) }}">{{ $event->user->name }}</a>
+                                            </svg><a href="{{ route('dashboard.edit', $event) }}">Modificar Evento</a>
                                         </span>
 
                                         @can('delete', $event)

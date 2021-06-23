@@ -28,4 +28,10 @@ class DashboardController extends Controller
         $event->delete();
         return back();
     }
+
+    public function edit(Event $event)
+    {
+        $categories = Category::all();
+        return view('changeEvent', ['categories' => $categories,'event' => $event]);
+    }
 }

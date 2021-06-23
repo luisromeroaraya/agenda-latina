@@ -25,6 +25,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::delete('/dashboard/{event}', [DashboardController::class, 'destroy'])->name('dashboard.destroy');
+    Route::get('/dashboard/{event}', [DashboardController::class, 'edit'])->name('dashboard.edit');
 
     Route::get('/dashboard/addevent', [AddEventController::class, 'index'])->name('dashboard.create');
     Route::post('/dashboard/addevent', [AddEventController::class, 'store']);
