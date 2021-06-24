@@ -28,9 +28,11 @@ class EventsController extends Controller
     {
         $events = Event::orderBy('date_start', 'asc')
         ->with(['user', 'category'])->filter(request(['search']))->paginate(9);
+        $highlights = Event::orderBy('date_start', 'asc')->with(['user', 'category'])->where('highlight', '1')->get();
         
         return view('events.index', [
-            'events' => $events
+            'events' => $events,
+            'highlights' => $highlights
         ]);
     }
 }
