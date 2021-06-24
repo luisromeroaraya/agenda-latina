@@ -8,10 +8,10 @@
       <div class="glide">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
-            @if ($events->count())
-            @foreach ($events as $event)
+            @if ($highlights->count())
+            @foreach ($highlights as $highlight)
             <li class="glide__slide">
-              <x-hero :event="$event" />
+              <x-hero :event="$highlight" />
             </li>
             @endforeach
             @else

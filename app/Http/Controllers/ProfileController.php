@@ -9,7 +9,7 @@ class ProfileController extends Controller
 {
     public function index() 
     {
-        return view('profile');
+        return view('dashboard.profile');
     }
 
     public function update(UpdateProfileRequest $request)

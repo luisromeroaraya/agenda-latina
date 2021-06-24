@@ -1,5 +1,5 @@
 <div class="md:w-1/2 w-5/6 bg-white p-6">
-    <form action="{{ route('dashboard.create') }}" method="post">
+    <form action="{{ isset($event) ? route('myevents.update', $event) : route('addevent.create') }}" method="post">
         @csrf
         <div class="mb-4">
             <label for="name" class="sr-only">Nombre del Evento</label>
@@ -110,8 +110,7 @@
             @enderror
         </div>
         <div>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-3
-                            rounded font-medium w-full">Agregar Evento</button>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">{{ isset($event) ? 'Actualizar' : 'Agregar' }} Evento</button>
         </div>
     </form>
 </div>

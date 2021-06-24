@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MyEventsController;
 use App\Http\Controllers\AddEventController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EventsController;
@@ -23,12 +24,15 @@ use App\Http\Controllers\CategoryEventController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/dashboard/myevents', [DashboardController::class, 'index'])->name('dashboard');
-    Route::delete('/dashboard/myevents/{event}', [DashboardController::class, 'destroy'])->name('dashboard.destroy');
-    Route::get('/dashboard/myevents/{event}', [DashboardController::class, 'edit'])->name('dashboard.edit');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::get('/dashboard/addevent', [AddEventController::class, 'index'])->name('dashboard.create');
-    Route::post('/dashboard/addevent', [AddEventController::class, 'store']);
+    Route::get('/dashboard/myevents', [MyEventsController::class, 'index'])->name('myevents');
+    Route::delete('/dashboard/myevents/{event}', [MyEventsController::class, 'destroy'])->name('myevents.destroy');
+    Route::get('/dashboard/myevents/{event}', [MyEventsController::class, 'edit'])->name('myevents.edit');
+    Route::post('/dashboard/myevents/{event}', [MyEventsController::class, 'update'])->name('myevents.update');
+
+    Route::get('/dashboard/addevent', [AddEventController::class, 'index'])->name('addevent');
+    Route::post('/dashboard/addevent', [AddEventController::class, 'store'])->name('addevent.create');
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
