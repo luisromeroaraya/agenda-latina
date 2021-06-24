@@ -5,6 +5,7 @@
         </a>
         <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
             <a href="{{ route('home') }}" class="mr-5 hover:text-gray-900">Inicio</a>
+            <a href="{{ route('articles') }}" class="mr-5 hover:text-gray-900">Artículos</a>
             <a href="{{ route('events') }}" class="mr-5 hover:text-gray-900">Eventos</a>
         </nav>
         @if (Route::has('login'))

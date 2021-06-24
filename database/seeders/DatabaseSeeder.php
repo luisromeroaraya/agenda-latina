@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Event;
+use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -44,7 +45,8 @@ class DatabaseSeeder extends Seeder
         // Eventos creados por el admin
         Event::factory(3)->create([
             "user_id" => $admin->id,
-            "category_id" => $category1->id
+            "category_id" => $category1->id,
+            "highlight" => 1
         ]);
 
         // Eventos creados por usuarios random
@@ -95,5 +97,8 @@ class DatabaseSeeder extends Seeder
             "user_id" => $user4->id,
             "category_id" => $category11->id
         ]);
+
+        Article::factory(3)->create(["highlight" => 1]);
+        Article::factory(9)->create();
     }
 }

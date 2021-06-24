@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\MyEventsController;
-use App\Http\Controllers\AddEventController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EventsController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AddEventController;
+use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\MyEventsController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserEventController;
 use App\Http\Controllers\CategoryEventController;
 
@@ -41,6 +42,10 @@ Route::group(['middleware' => 'auth'], function() {
 Route::get('/events', [EventsController::class, 'index'])->name('events');
 Route::get('/events/{event}', [EventsController::class, 'show'])->name('events.show');
 Route::post('/events', [EventsController::class, 'search'])->name('events.search');
+
+Route::get('/articles', [ArticlesController::class, 'index'])->name('articles');
+Route::get('/articles/{article}', [ArticlesController::class, 'show'])->name('articles.show');
+Route::post('/articles', [ArticlesController::class, 'search'])->name('articles.search');
 
 Route::get('/users/{user:username}/events', [UserEventController::class, 'index'])->name('users.events');
 

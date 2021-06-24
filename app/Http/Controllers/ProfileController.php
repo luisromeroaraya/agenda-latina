@@ -22,6 +22,6 @@ class ProfileController extends Controller
             ]);
         }
 
-        return redirect()->route('profile')->with('message', 'Cambios guardados exitosamente');
+        return back()->with('message', 'Cambios guardados exitosamente');
     }
 }
