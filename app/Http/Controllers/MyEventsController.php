@@ -38,8 +38,9 @@ class MyEventsController extends Controller
 
     public function update(UpdateEventRequest $request, Event $event)
     {
-        $event->update($request->only('name', 'email'));
+        $event->update($request->only('name', 'category_id','date_start', 'date_end','place', 'address', 'description', 'telephone', 'email', 'url', 'img_src'));
 
-        return redirect()->route('myevents')->with('message', 'Cambios guardados exitosamente');
+        return back()->with('message', 'Cambios guardados exitosamente');
+
     }
 }
