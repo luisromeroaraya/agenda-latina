@@ -10,6 +10,7 @@ use App\Http\Controllers\MyEventsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserEventController;
 use App\Http\Controllers\CategoryEventController;
+use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,5 +51,8 @@ Route::post('/articles', [ArticlesController::class, 'search'])->name('articles.
 Route::get('/users/{user:username}/events', [UserEventController::class, 'index'])->name('users.events');
 
 Route::get('/categories/{category:name}/events', [CategoryEventController::class, 'index'])->name('categories.events');
+
+Route::get('/news', [ApiController::class, 'displayNews']);
+Route::post('/sourceId', [ApiController::class, 'displayNews']);
 
 require __DIR__.'/auth.php';

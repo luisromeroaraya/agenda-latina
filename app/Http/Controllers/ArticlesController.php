@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Api;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
@@ -14,7 +14,11 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        $articles = Article::orderBy('created_at', 'asc')->paginate(9);
+        //$articles = Article::orderBy('created_at', 'asc')->paginate(9);
+        $apiModel = new Api();
+        $articles = $apiModel->fetchNews('latinoamerica');
+
+        //dd($articles);
         $highlights = Article::orderBy('created_at', 'asc')->where('highlight', '1')->get();
         return view('articles.index', [
             'articles' => $articles,

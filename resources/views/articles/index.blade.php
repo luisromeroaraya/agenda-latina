@@ -8,7 +8,7 @@
             <div class="glide">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
-                        @if ($highlights->count())
+                        @if (isset($highlights))
                         @foreach ($highlights as $highlight)
                         <li class="glide__slide">
                             <x-article-hero :article="$highlight" />
@@ -35,14 +35,14 @@
 
             <!-- GRID -->
             <div class="flex flex-wrap -m-4">
-                @if ($articles->count())
+                @if (isset($articles))
                 @foreach ($articles as $article)
                 <div class="p-4 md:w-1/3">
                     <x-article :article="$article" />
                 </div>
                 @endforeach
             </div>
-            {{ $articles->links() }}
+            
             @else
             <p>Ningún Artículo</p>
             @endif
