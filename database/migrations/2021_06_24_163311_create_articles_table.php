@@ -15,14 +15,14 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('source');
-            $table->string('title');
-            $table->string('author');
-            $table->string('description');
+            $table->string('source', 256);
+            $table->string('title', 256);
+            $table->string('author', 256);
+            $table->string('description', 256);
             $table->text('content');
-            $table->string('url');
-            $table->string('urlToImage');
-            $table->string('publishedAt');
+            $table->string('url', 256);
+            $table->string('urlToImage', 256);
+            $table->dateTime('publishedAt', $precision = 0);
             $table->boolean('highlight')->default('0');
             $table->timestamps();
         });
