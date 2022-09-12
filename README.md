@@ -1,5 +1,5 @@
 # Agenda Latina website
-[Deployed website](http://agenda-latina.herokuapp.com/)
+[Deployed website](https://agenda-latina.herokuapp.com/)
 
 The idea is to create a cultural agenda website for the latin american community in Belgium using [Laravel](https://laravel.com) and [Tailwind CSS](https://tailwindcss.com).
 
